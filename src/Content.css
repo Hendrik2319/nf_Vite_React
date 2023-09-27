@@ -1,4 +1,4 @@
-.MainBlogContainer {
+.BlogList {
     display: flex;
     flex-wrap: wrap;
 }
