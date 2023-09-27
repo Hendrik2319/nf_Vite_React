@@ -1,0 +1,17 @@
+.BlogEntry {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    padding: 0 2em 1em 2em;
+    margin: 1em;
+}
+.BlogEntry > * {
+    flex-grow: 0;
+}
+.BlogEntryContent {
+    flex-grow: 1;
+}
+.Author:before {
+    content: "Author: "
+}

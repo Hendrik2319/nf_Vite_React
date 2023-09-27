@@ -1,0 +1,4 @@
+.MainBlogContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
