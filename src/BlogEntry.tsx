@@ -3,6 +3,7 @@ import {useState} from "react";
 
 type BlogEntryProps = {
     title:string
+    content?: string[]
     author:string
     onclick: (message: string) => void
 }
@@ -10,12 +11,20 @@ type BlogEntryProps = {
 export default function BlogEntry( props: BlogEntryProps ) {
     const [count, setCount] = useState(0)
 
+    const content = props.content ? props.content : [
+        "Grundgerüst des Web-Frontends",
+        "besteht aus Tags: <tag>Text</tag>"
+    ]
+
     return (
         <div className="BlogEntry">
             <h3>{props.title}</h3>
             <ul className="BlogEntryContent">
-                <li>Grundgerüst des Web-Frontends</li>
-                <li>besteht aus Tags: &lt;tag&gt;Text&lt;/tag&gt;</li>
+                {
+                    content.map( (line, index ) =>
+                        <li key={index}>{line}</li>
+                    )
+                }
             </ul>
             <div className="Author">{props.author}</div>
             <div>Counter: {count}</div>
